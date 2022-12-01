@@ -2,18 +2,20 @@ package com.example.sunrinsocialnetwork
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
+import androidx.navigation.Navigation
 import com.example.dudeulimproject.base.BaseActivity
-import com.example.sunrinsocialnetwork.databinding.ActivityMainBinding
+import com.example.sunrinsocialnetwork.databinding.ActivitySignUpBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
-    private val viewModel : MainViewModel by viewModels()
+class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sign_up) {
+    private val viewModel : SignUpViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.viewModel = viewModel
-        binding.activity = this
-        binding.lifecycleOwner = this
+    }
+    fun clickBackButton(view: View) {
+        finish()
     }
 }

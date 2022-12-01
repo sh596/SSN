@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.example.sunrinsocialnetwork.LoginActivity" />
+
+        <variable
+            name="viewModel"
+            type="com.example.sunrinsocialnetwork.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LoginActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ssn" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="82dp"
+                android:layout_marginEnd="48dp"
+                app:cardCornerRadius="8dp"
+                app:strokeColor="#3d3d3d"
+                app:strokeWidth="1dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fontFamily="@font/pretendardm"
+                    android:hint="이메일"
+                    android:paddingStart="14dp"
+                    android:text="@={viewModel.email}"
+                    android:textColor="#3d3d3d"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="48dp"
+                app:cardCornerRadius="8dp"
+                app:strokeColor="#3d3d3d"
+                app:strokeWidth="1dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fontFamily="@font/pretendardm"
+                    android:hint="비밀번호"
+                    android:inputType="textPassword"
+                    android:paddingStart="14dp"
+                    android:text="@={viewModel.password}"
+                    android:textColor="#3d3d3d"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="124dp"
+                android:layout_marginEnd="64dp"
+                android:backgroundTint="#69C98A"
+                android:onClick="@{activity::clickSignInButton}"
+                app:cardCornerRadius="8dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/pretendardb"
+                    android:gravity="center"
+                    android:text="로그인"
+                    android:textColor="#fff"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="64dp"
+                android:onClick="@{activity::clickSignUpButton}"
+                app:cardCornerRadius="8dp"
+                app:strokeColor="#69C98A"
+                app:strokeWidth="2dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/pretendardb"
+                    android:gravity="center"
+                    android:text="회원가입"
+                    android:textColor="#69C98A"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
